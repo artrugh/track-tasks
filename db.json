@@ -1,24 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "text": "Doctors Appointment",
-      "day": "May 5th at 2:30pm",
-      "reminder": false
-    },
-    {
-      "id": 2,
-      "text": "Doctors Appointment",
-      "day": "May 5th at 2:30pm",
-      "reminder": false
-    },
-    {
-      "id": 3,
-      "text": "Doctors Appointment",
-      "day": "May 5th at 2:30pm",
-      "reminder": false
-    },
-    {
       "id": 4,
       "text": "Doctors Appointment",
       "day": "May 5th at 2:30pm",
@@ -28,17 +10,17 @@
       "id": 5,
       "text": "Doctors Appointment",
       "day": "May 5th at 2:30pm",
-      "reminder": true
+      "reminder": false
     },
     {
       "text": "Task1",
       "day": "10-w",
-      "reminder": true,
+      "reminder": false,
       "id": 6
     },
     {
-      "text": "some task",
-      "day": "hola",
+      "text": "dsfsd",
+      "day": "dsa",
       "reminder": false,
       "id": 7
     }

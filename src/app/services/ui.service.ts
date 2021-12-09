@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class UiService {
   private showAddTask: boolean = false;
   private subject = new Subject<any>();
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   toggleAddTask(): void {
     this.showAddTask = !this.showAddTask;
@@ -17,5 +18,9 @@ export class UiService {
 
   onToggle(): Observable<any> {
     return this.subject.asObservable();
+  }
+
+  hasRoute(route: string) {
+    return this.router.url === route;
   }
 }

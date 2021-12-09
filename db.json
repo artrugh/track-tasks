@@ -13,16 +13,16 @@
       "reminder": false
     },
     {
-      "text": "Task1",
-      "day": "10-w",
-      "reminder": false,
-      "id": 6
-    },
-    {
       "text": "dsfsd",
       "day": "dsa",
       "reminder": false,
       "id": 7
+    },
+    {
+      "text": "New Task",
+      "day": "Task",
+      "reminder": true,
+      "id": 8
     }
   ]
 }

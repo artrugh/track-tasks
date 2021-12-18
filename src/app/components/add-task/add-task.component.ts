@@ -12,7 +12,7 @@ export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   text!: string;
   day!: string;
-  reminder: boolean = false;
+  reminder = false;
   showAddTask!: boolean;
   subscription: Subscription;
   constructor(private uiService: UiService) {

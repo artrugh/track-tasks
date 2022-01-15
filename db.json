@@ -13,16 +13,10 @@
       "reminder": false
     },
     {
-      "text": "dsfsd",
-      "day": "dsa",
-      "reminder": false,
-      "id": 7
-    },
-    {
-      "text": "New Task",
-      "day": "Task",
+      "text": "Hi",
+      "day": "20.02.2021",
       "reminder": true,
-      "id": 8
+      "id": 6
     }
   ]
 }

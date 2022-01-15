@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable, Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UiService {
   private showAddTask = false;
-  private subject = new Subject<any>();
+  private subject = new Subject<boolean>();
 
   constructor(private router: Router) {}
 
@@ -16,11 +16,11 @@ export class UiService {
     this.subject.next(this.showAddTask);
   }
 
-  onToggle(): Observable<any> {
-    return this.subject.asObservable();
+  onToggle(action: (v: boolean) => void): Subscription {
+    return this.subject.subscribe(action);
   }
 
-  hasRoute(route: string) {
+  hasRoute(route: string): boolean {
     return this.router.url === route;
   }
 }

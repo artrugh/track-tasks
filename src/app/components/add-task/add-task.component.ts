@@ -1,4 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/services/ui.service';
 import { Task } from './../../Task';
@@ -8,7 +14,7 @@ import { Task } from './../../Task';
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css'],
 })
-export class AddTaskComponent implements OnInit {
+export class AddTaskComponent implements OnInit, OnDestroy {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
   text!: string;
   day!: string;
@@ -16,9 +22,9 @@ export class AddTaskComponent implements OnInit {
   showAddTask!: boolean;
   subscription: Subscription;
   constructor(private uiService: UiService) {
-    this.subscription = this.uiService
-      .onToggle()
-      .subscribe((v) => (this.showAddTask = v));
+    this.subscription = this.uiService.onToggle(
+      (showAddTask) => (this.showAddTask = showAddTask)
+    );
   }
 
   ngOnInit(): void {}
@@ -41,5 +47,8 @@ export class AddTaskComponent implements OnInit {
     this.reminder = false;
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
   // @todo - emit event
 }
